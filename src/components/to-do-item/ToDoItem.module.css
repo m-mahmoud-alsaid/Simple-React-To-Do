@@ -26,16 +26,7 @@
     color: white;
 }
 
-.icons {
-    display: flex;
-    gap: 15px;
-    font-size: 22px;
-}
-
-.icons svg:first-of-type {
-    color: lightgreen;
-}
-
-.icons svg:last-of-type {
+svg {
+    font-size: 25px;
     color: red;
 }

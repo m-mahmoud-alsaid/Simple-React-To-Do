@@ -1,18 +1,20 @@
 import styles from './ToDoItem.module.css'
-import { FaCheck } from "react-icons/fa";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 
-function ToDoItem({ task = 'Task' }) {
+function ToDoItem({ task, deleteTask, handleDone }) {
     return (
         <div className={styles.item}>
             <div className={styles.task}>
-                <input type='checkbox' />
-                <p>{task}</p>
+                <input
+                    type='checkbox'
+                    checked={task.completed}
+                    onChange={() => {
+                        handleDone(task.id)
+                    }}
+                />
+                <p>{task.title}</p>
             </div>
-            <div className={styles.icons}>
-                <FaCheck />
-                <RiDeleteBin6Fill />
-            </div>
+            <RiDeleteBin6Fill onClick={() => deleteTask(task.id)} />
         </div>
     )
 }
