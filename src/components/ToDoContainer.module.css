@@ -1,0 +1,14 @@
+.to-do-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 15px 25px;
+    border-radius: 7px;
+    gap: 20px;
+}

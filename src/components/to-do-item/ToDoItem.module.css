@@ -1,0 +1,41 @@
+.item {
+    background-color: #0066ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 15px;
+    border-radius: 7px;
+}
+
+.task {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.task input {
+    width: 25px;
+    height: 25px;
+    accent-color: #ffffff;
+}
+
+.task p {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    font-size: 22px;
+}
+
+.icons svg:first-of-type {
+    color: lightgreen;
+}
+
+.icons svg:last-of-type {
+    color: red;
+}
