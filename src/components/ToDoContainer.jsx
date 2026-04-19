@@ -2,10 +2,13 @@ import styles from './ToDoContainer.module.css'
 import ToDoHeader from '../components/to-do-header/ToDoHeader'
 import ToDoList from './to-do-list/ToDoList'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function ToDoContainer() {
-    const [tasks, setTask] = useState([]);
+    const [tasks, setTask] = useState(() => {
+        let savedTasks = localStorage.getItem('tasks');
+        return savedTasks ? JSON.parse(savedTasks) : [];
+    });
     const [inputValue, setInputValue] = useState('');
     const [filter, setFilter] = useState('all');
 
@@ -33,6 +36,10 @@ function ToDoContainer() {
         return true;
     }
     );
+
+    useEffect(() => {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }, [tasks]);
 
     return (
         <div className={`${styles['to-do-container']} container`} >
